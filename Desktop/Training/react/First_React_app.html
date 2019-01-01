@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>DNV INTERNATIONAL EDUCATION ACADEMY </title>
+    
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <style>
+        .heading{
+            
+            text-align: center;
+            color: red;
+            font-size: 45px;
+        }
+        
+        .oneline {
+            width: 400px;
+            height: 240px;
+            border: solid 2px #ccc;
+            display: inline-block;
+            margin-right: 25px; 
+            margin-left: 25px;
+            margin-top: 30px;
+            background-image: url('index.jpg');
+            font-size: 25px;
+        }
+        
+        #courses{
+            text-align: center;
+            color: blue;
+        }
+        
+        
+        #regLog{
+            background: black;
+            text-align: center;
+        }
+        
+        #col-10{
+            padding: 1%;
+            display: inline-block; 
+            color: white;
+            font-size: 23px;    
+        }
+        
+        #sel{            
+            font-size: 30px; 
+        }
+        
+        #main{
+            padding: 8%;
+            background-image:url("index.jpg");
+            margin-bottom: 20px;
+            border: solid 2px #ccc;
+        }
+        
+        #col-25{
+            padding: 10%;
+            width: 10%;
+            height: 15%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        
+        const subHeading = {
+            
+            padding: "20px",
+            color:"gray",
+            "text-align":"center",
+            "font-size":"30px",
+            margin: "20px"
+            
+        };
+        
+        class App extends React.Component { 
+            
+            person(type,num){
+                return(
+                <div id="col-25">
+                    <h2>{type}:{num}</h2>
+                </div>
+                )
+            }
+            
+            category(){
+                return(
+                <div style={{ 'font-size': '40px' }}>
+                    
+                    <center>Select Category 
+                        <select id="sel">
+                            <option value="MCA">MCA</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BBA">BBA</option>
+                        </select>
+                    </center>
+                </div>
+                )
+            }
+            
+            render() { 
+                return (
+                <div>
+                    
+                    <div id="regLog">
+                        <div id="col-10">Home</div>
+                        <div id="col-10">About us</div>
+                        <div id="col-10">Gallery</div>
+                        <div id="col-10">&#128214; Blog</div>
+                        <div id="col-10"> Career</div>
+                        <div id="col-10">&#9742; Contact us</div>
+                        <div id="col-10">&#9997; Register or Login</div>
+                    </div>
+                    
+                    <div id="main">
+                        <h1 className="heading">DNV INTERNATIONAL EDUCATION ACADEMY </h1>
+                        <div style={subHeading}>Future of Education Technology</div>
+                        <h3 id="courses">BBA. BCA. MCA </h3>
+                    </div>
+                    
+                    {this.category()}
+                    
+                    <div>
+                        <div class="oneline">{this.person("Student","100")}</div>
+                        <div class="oneline">{this.person("Faculty","12")}</div>
+                        <div class="oneline">{this.person("Classrooms","8")}</div>
+                        <div class="oneline">{this.person("Computers","120")}</div>
+                        
+                    </div> 
+                    
+                </div>
+                ); 
+            } 
+        } 
+        
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+</body>
+
+</html>
